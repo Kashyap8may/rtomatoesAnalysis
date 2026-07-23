@@ -20,7 +20,7 @@ This repository contains comprehensive T-SQL scripts and analytical queries desi
    - Identification of peak engagement periods and trending releases.
 
 3. **Genre Runtime Exploration**:
-   - Runtime normalization using string splitting (`string_split`) for multi-genre movies.
+   - Runtime normalization using string splitting (`STRING_SPLIT`) for multi-genre movies.
    - Average duration analysis per genre category.
 
 4. **Director Sentiment Analysis & Ranking**:
@@ -29,13 +29,20 @@ This repository contains comprehensive T-SQL scripts and analytical queries desi
 
 ---
 
-## 🛠️ Repository Structure
+## 🛠️ Repository Structure & SQL Modules
 
 ```
 rtomatoesAnalysis/
 │
-├── rtomatoes_movie_review.sql   # Core T-SQL queries & analytics script
-└── README.md                    # Project documentation
+├── sql/
+│   ├── 00_schema_and_views.sql           # Database schema, indexes & views
+│   ├── 01_audience_score_analysis.sql   # Audience scores & streaming metrics
+│   ├── 02_quarterly_review_trends.sql   # Quarterly review volume aggregations
+│   ├── 03_genre_runtime_analysis.sql    # Genre runtime string-split metrics
+│   └── 04_director_sentiment_ranking.sql# Director sentiment window rankings
+│
+├── rtomatoes_movie_review.sql           # Original consolidated T-SQL script
+└── README.md                            # Project documentation
 ```
 
 ---
@@ -52,8 +59,8 @@ The analysis relies on two primary tables:
 ## 🚀 How to Execute Queries
 
 1. Import your `rotten_tomatoes_movies` and `rotten_tomatoes_movie_reviews` tables into Microsoft SQL Server Management Studio (SSMS) or Azure Data Studio.
-2. Open [`rtomatoes_movie_review.sql`](file:///d:/Kashyap/kash_repos/rtomatoesAnalysis/rtomatoes_movie_review.sql).
-3. Execute the analytical queries individually or by section to view sentiment rankings and genre metrics.
+2. Run [`sql/00_schema_and_views.sql`](file:///d:/Kashyap/kash_repos/rtomatoesAnalysis/sql/00_schema_and_views.sql) to set up tables, performance indexes, and views.
+3. Execute the analytical query modules in sequence (01 to 04) to view sentiment rankings and performance metrics.
 
 ---
 
